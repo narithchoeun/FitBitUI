@@ -50,24 +50,43 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
+  .state('tab.exercise', {
+    url: '/exercise',
+    views: {
+      'tab-exercise': {
+        templateUrl: 'templates/tab-exercise.html',
+        controller: 'ExerciseCtrl'
       }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
+    }
+  })
+
+  .state('tab.health', {
+    url: '/health',
+    views: {
+      'tab-health': {
+        templateUrl: 'templates/tab-health.html',
+        controller: 'HealthCtrl'
       }
-    })
+    }
+  })
+  .state('tab.nutrition', {
+    url: '/nutrition',
+    views: {
+      'tab-nutrition': {
+        templateUrl: 'templates/tab-nutrition.html',
+        controller: 'NutritionCtrl'
+      }
+    }
+  })
+  .state('tab.calendar', {
+    url: '/calendar',
+    views: {
+      'tab-calendar': {
+        templateUrl: 'templates/tab-calendar.html',
+        controller: 'CalendarCtrl'
+      }
+    }
+  })
 
   .state('tab.account', {
     url: '/account',
@@ -75,16 +94,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
-      }
-    }
-  })
-
-  .state('tab.exercise', {
-    url: '/exercise',
-    views: {
-      'exercise': {
-        templateUrl: 'templates/exercise.html',
-        controller: 'DashCtrl'
       }
     }
   });
