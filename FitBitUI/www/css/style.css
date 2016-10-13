@@ -1,12 +1,18 @@
 .exercise{
   background-color: rgb(216,238,207);
   text-align: center;
+
 }
 .health{
   background-color: rgb(239,214,214);
   text-align: center;
+
 }
 .nutrition{
   background-color: rgb(251,247,220);
   text-align: center;
+}
+
+ion-item{
+  height: 29vh;
 }
