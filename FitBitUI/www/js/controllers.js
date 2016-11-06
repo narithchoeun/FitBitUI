@@ -2,7 +2,8 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-.controller('ExerciseCtrl', function($scope) {})
+.controller('ExerciseCtrl', function($scope) {
+})
 
 .controller('HealthCtrl', function($scope) {})
 
