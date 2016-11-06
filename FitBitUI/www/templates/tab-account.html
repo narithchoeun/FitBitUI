@@ -1,9 +1,17 @@
-<ion-view view-title="Account">
-  <ion-content>
+<ion-view view-title="Account" ng-controller="AccountCtrl">
+  <ion-content class="padding">
     <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
+      <ion-item class="item item-divider text-center">My Information</ion-item>
+      <label class="item item-input item-floating-label" ng-repeat="label in infoLabels">
+        <span class="input-label">{{label.title}}</span>
+        <input type="text" placeholder="{{label.title}}">
+      </label>
+    </ion-list>
+
+    <ion-list>
+      <ion-item class="item item-divider text-center">My Goals</ion-item>
+      <ion-checkbox ng-repeat="goal in goals" ng-model="" ng-checked="">{{goal.text}}</ion-checkbox>
+      <button class="button button-full button-balanced text-center" ng-click="addGoal"><i class="ion-plus-circled"></i> Add a Goal</button>
     </ion-list>
   </ion-content>
 </ion-view>
