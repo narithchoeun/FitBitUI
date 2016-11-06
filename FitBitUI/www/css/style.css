@@ -23,3 +23,33 @@
 .sidemenu-list .item-complex .item-content {
   background-color: inherit;
 }
+
+.exercise_title{
+  margin-left: 25%;
+  margin-top: -8%;
+}
+
+.min{
+  margin-left: 25%;
+}
+
+.heartB{
+  margin-left: 25%;
+}
+
+.fa-heart{
+  color: darkred;
+}
+
+.kcal{
+  margin-left: 50%;
+  margin-top: -2%;
+}
+
+.fa-fire{
+  color: orange;
+}
+
+.fa-clock-o{
+  color: #0c60ee;
+}
