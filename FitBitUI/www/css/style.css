@@ -67,8 +67,16 @@
 font-size: 90px;
 
 }
+.add_exercise{
+  margin-top: -2%;
+  margin-left: 85%;
+}
+.fa-plus-circle{
+  color: #0d9ba5;
+
+}
 
 .summary_exercise_item{
-  background-color: #b8f5f9;
+  background-color: #e7fcfd;
   font-style: italic;
 }
