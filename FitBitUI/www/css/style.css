@@ -23,3 +23,52 @@
 .sidemenu-list .item-complex .item-content {
   background-color: inherit;
 }
+
+.exercise_title{
+  margin-left: 25%;
+  margin-top: -8%;
+}
+
+.min{
+  margin-left: 25%;
+}
+
+.heartB{
+  margin-left: 25%;
+}
+
+.fa-heart{
+  color: darkred;
+}
+
+.kcal{
+  margin-left: 50%;
+  margin-top: -2%;
+}
+
+.fa-fire{
+  color: orange;
+}
+
+.fa-clock-o{
+  color: #0c60ee;
+}
+.exercice_summary_min{
+  margin-top: -2%;
+  margin-left: 30%;
+}
+
+.exercice_summary_kcal{
+  margin-top: -2%;
+  margin-left: 50%;
+}
+
+.summary_exercise{
+font-size: 90px;
+
+}
+
+.summary_exercise_item{
+  background-color: #b8f5f9;
+  font-style: italic;
+}
