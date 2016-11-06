@@ -53,3 +53,22 @@
 .fa-clock-o{
   color: #0c60ee;
 }
+.exercice_summary_min{
+  margin-top: -2%;
+  margin-left: 30%;
+}
+
+.exercice_summary_kcal{
+  margin-top: -2%;
+  margin-left: 50%;
+}
+
+.summary_exercise{
+font-size: 90px;
+
+}
+
+.summary_exercise_item{
+  background-color: #b8f5f9;
+  font-style: italic;
+}

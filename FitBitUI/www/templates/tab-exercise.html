@@ -1,7 +1,13 @@
 <ion-view view-title="Exercise">
   <ion-content>
     <ion-list>
+      <ion-item class="summary_exercise_item">
+        <h2 class="summary_exercise">Summary</h2>
+        <p class="exercice_summary_min"><i class="fa fa-clock-o" aria-hidden="true"></i> 2 heures</p>
+        <p class="exercice_summary_kcal"><i class="fa fa-fire" aria-hidden="true"></i> 911 calories</p>
+      </ion-item>
       <ion-item  href="#/tab/walking">
+        <ion-nav-view name="tab-walking"></ion-nav-view>
         <img src="../img/walking.png" alt="walking" id="walking" width="100" height="100">
         <h1 class="exercise_title">Walking</h1>
         <p class="min"><i class="fa fa-clock-o" aria-hidden="true"></i> 45 min</p>
@@ -12,16 +18,16 @@
       <ion-item>
         <img src="../img/running.png" alt="running" id="running" width="100" height="100">
         <h1 class="exercise_title">Running</h1>
-        <p class="min"><i class="fa fa-clock-o" aria-hidden="true"></i> 45 min</p>
-        <p class="heartB"><i class="fa fa-heart" aria-hidden="true"></i> 98 bpm moy</p>
-        <p class="kcal"><i class="fa fa-fire" aria-hidden="true"></i> 111 calories</p>
+        <p class="min"><i class="fa fa-clock-o" aria-hidden="true"></i> 55 min</p>
+        <p class="heartB"><i class="fa fa-heart" aria-hidden="true"></i> 110 bpm moy</p>
+        <p class="kcal"><i class="fa fa-fire" aria-hidden="true"></i> 600 calories</p>
       </ion-item>
       <ion-item>
         <img src="../img/weight.png" alt="weight" id="weight" width="100" height="100">
         <h1 class="exercise_title">Weights</h1>
-        <p class="min"><i class="fa fa-clock-o" aria-hidden="true"></i> 45 min</p>
-        <p class="heartB"><i class="fa fa-heart" aria-hidden="true"></i> 98 bpm moy</p>
-        <p class="kcal"><i class="fa fa-fire" aria-hidden="true"></i> 111 calories</p>
+        <p class="min"><i class="fa fa-clock-o" aria-hidden="true"></i> 20 min</p>
+        <p class="heartB"><i class="fa fa-heart" aria-hidden="true"></i> 96 bpm moy</p>
+        <p class="kcal"><i class="fa fa-fire" aria-hidden="true"></i> 200 calories</p>
       </ion-item>
     </ion-list>  </ion-content>
 </ion-view>
