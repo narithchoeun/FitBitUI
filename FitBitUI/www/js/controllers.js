@@ -3,6 +3,11 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope) {})
 
 .controller('ExerciseCtrl', function($scope) {
+  $scope.bpm;
+  $scope.minExercised;
+  $scope.caloriesBurned;
+
+
 })
 
 .controller('HealthCtrl', function($scope) {})
@@ -15,27 +20,39 @@ angular.module('starter.controllers', [])
   $scope.goals = [
     {
       "text": "Lose 10 pounds",
-      "checked": true
+      "checked": true,
+      "category": "nutrition"
     },
     {
       "text": "Run 1 Mile",
-      "checked": false
+      "checked": false,
+      "category": "exercise"
     },
     {
       "text": "Drink 1L of Water",
-      "checked": true
+      "checked": true,
+      "category": "nutrition"
     }
   ];
 
   $scope.checkGoal = function(){
-    // for(int i = 0; i < goals.length; i++){
-    //
-    // }
+
   }
-  // $scope.addGoal = function(){
-  //   console.log("user wants to add a goal");
-  //
-  // }
+
+  $scope.addGoal = function(text){
+    console.log("user wants to add a goal");
+    if (text === ""){
+      console.log("empty input");
+    } else {
+      $scope.goals.push(
+        {
+          "text": text,
+          "checked": false,
+          "category": category
+        }
+      );
+    }
+  };
 
   $scope.infoLabels = [
     // {
