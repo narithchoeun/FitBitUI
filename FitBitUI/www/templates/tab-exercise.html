@@ -3,33 +3,70 @@
     <ion-list>
       <ion-item class="summary_exercise_item">
         <h2 class="summary_exercise">Summary</h2>
-        <p class="exercice_summary_min"><i class="fa fa-clock-o" aria-hidden="true"></i> 2 heures</p>
-        <p class="exercice_summary_kcal"><i class="fa fa-fire" aria-hidden="true"></i> 911 calories</p>
 
-        <p class="add_exercise">Add exercise <i class="fa fa-plus-circle fa-3x" aria-hidden="true"></i></p>
+        <div class="row">
+          <div class="col"><i class="fa fa-clock-o" aria-hidden="true"></i> 2 heures</div>
+          <div class="col">Add Exercise</div>
+          <div class="col"><i class="fa fa-fire" aria-hidden="true"></i>911 calories</div>
+
+        </div>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-10"><i class="fa fa-plus-circle fa-3x pull-right" aria-hidden="true"></i> </div>
+          <div class="col"></div>
+        </div>
+
+
+
+
+
       </ion-item>
+
       <ion-item  href="#/tab/walking">
         <ion-nav-view name="tab-walking"></ion-nav-view>
-        <img src="../img/walking.png" alt="walking" id="walking" width="100" height="100">
-        <h1 class="exercise_title">Walking</h1>
-        <p class="min"><i class="fa fa-clock-o" aria-hidden="true"></i> 45 min</p>
-        <p class="heartB"><i class="fa fa-heart" aria-hidden="true"></i> 98 bpm moy</p>
-        <p class="kcal"><i class="fa fa-fire" aria-hidden="true"></i> 111 calories</p>
+        <div class="row">
+          <div class="col"><img src="../img/walking.png" alt="walking" id="walking" width="80" height="80">
+          </div>
+          <div class="col"><h1 class="exercise_title">Walking</h1></div>
+        </div>
+
+        <div class="row">
+          <div class="col col-33 col-offset-33"><i class="fa fa-clock-o" aria-hidden="true"></i> 45 min</div>
+          <div class="col"><i class="fa fa-fire" aria-hidden="true"></i> 111 calories</div>
+        </div>
+        <div class="row">
+          <div class="col col-33 col-offset-33"><i class="fa fa-heart" aria-hidden="true"></i> 98 bpm moy</div>
+        </div>
 
       </ion-item>
       <ion-item>
-        <img src="../img/running.png" alt="running" id="running" width="100" height="100">
-        <h1 class="exercise_title">Running</h1>
-        <p class="min"><i class="fa fa-clock-o" aria-hidden="true"></i> 55 min</p>
-        <p class="heartB"><i class="fa fa-heart" aria-hidden="true"></i> 110 bpm moy</p>
-        <p class="kcal"><i class="fa fa-fire" aria-hidden="true"></i> 600 calories</p>
+        <div class="row">
+          <div class="col"><img src="../img/running.png" alt="running" id="running" width="80" height="80">
+          </div>
+          <div class="col"><h1 class="exercise_title">Running</h1></div>
+        </div>
+        <div class="row">
+          <div class="col col-33 col-offset-33"><i class="fa fa-clock-o" aria-hidden="true"></i> 45 min</div>
+          <div class="col"><i class="fa fa-fire" aria-hidden="true"></i> 111 calories</div>
+        </div>
+        <div class="row">
+          <div class="col col-33 col-offset-33"><i class="fa fa-heart" aria-hidden="true"></i> 98 bpm moy</div>
+        </div>
       </ion-item>
       <ion-item>
-        <img src="../img/weight.png" alt="weight" id="weight" width="100" height="100">
-        <h1 class="exercise_title">Weights</h1>
-        <p class="min"><i class="fa fa-clock-o" aria-hidden="true"></i> 20 min</p>
-        <p class="heartB"><i class="fa fa-heart" aria-hidden="true"></i> 96 bpm moy</p>
-        <p class="kcal"><i class="fa fa-fire" aria-hidden="true"></i> 200 calories</p>
+        <div class="row">
+          <div class="col">        <img src="../img/weight.png" alt="weight" id="weight" width="80" height="80">
+
+          </div>
+          <div class="col"><h1 class="exercise_title">Weights</h1></div>
+        </div>
+        <div class="row">
+          <div class="col col-33 col-offset-33"><i class="fa fa-clock-o" aria-hidden="true"></i> 45 min</div>
+          <div class="col"><i class="fa fa-fire" aria-hidden="true"></i> 111 calories</div>
+        </div>
+        <div class="row">
+          <div class="col col-33 col-offset-33"><i class="fa fa-heart" aria-hidden="true"></i> 98 bpm moy</div>
+        </div>
       </ion-item>
     </ion-list>  </ion-content>
 </ion-view>
