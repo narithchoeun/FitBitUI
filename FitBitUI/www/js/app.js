@@ -39,7 +39,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
   // Each tab has its own nav history stack:
-
   .state('tab.dash', {
     url: '/dash',
     views: {
@@ -56,6 +55,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       'tab-exercise': {
         templateUrl: 'templates/tab-exercise.html',
         controller: 'ExerciseCtrl'
+      }
+    }
+  })
+
+  //detail state for walking
+  .state('tab.walking', {
+    url: '/walking',
+    views: {
+      //this is the same as exercise because it is the 'parent' view
+      'tab-exercise':{
+        templateUrl: 'templates/walking-detail.html',
+        // controller: 'ExerciseCtrl'
       }
     }
   })
@@ -98,7 +109,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   });
 
-  // if none of the above states are matched, use this as the fallback
+  // if none of the above states are matched, use this as the fallback/default
   $urlRouterProvider.otherwise('/tab/dash');
 
 });
