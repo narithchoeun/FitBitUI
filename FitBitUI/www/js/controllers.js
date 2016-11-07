@@ -3,7 +3,7 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope) {})
 
 .controller('ExerciseCtrl', function($scope) {
-  
+
 })
 
 .controller('HealthCtrl', function($scope) {})
@@ -59,14 +59,17 @@ angular.module('starter.controllers', [])
     // },
     {
       "title": "Age",
+      "placeholder": "Enter your age",
       "content":""
     },
     {
-      "title": "Current Weight",
+      "title": "Weight (lbs)",
+      "placeholder": "Enter your weight",
       "content":""
     },
     {
-      "title": "Goal Weight",
+      "title": "Goal (lbs)",
+      "placeholder": "Enter your goal weight",
       "content":""
     }
   ]
