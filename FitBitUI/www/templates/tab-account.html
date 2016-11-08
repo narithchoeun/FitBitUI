@@ -10,9 +10,9 @@
 
     <ion-list>
       <ion-item class="item-divider text-center" id="account-divider">
-        <i class="button button-small pull-left" ng-click="editGoals()">Edit</i>
+        <i class="button button-small pull-left" ng-click="goal.showDelete = !goal.showDelete; goal.showReorder = false">Edit</i>
         My Goals
-        <i class="button button-small icon ion-navicon pull-right"></i>
+        <i class="button button-small icon ion-navicon pull-right" ng-click="goal.showReorder = ! goal.showReorder; goal.showDelete = false"></i>
       </ion-item>
 
       <ion-item class="item-input-inset">
@@ -22,7 +22,20 @@
         <button class="button button-small button-balanced text-center" ng-click="addGoal()"><i class="icon ion-plus-circled"></i> Add Goal</button>
       </ion-item>
 
-      <ion-checkbox ng-repeat="goal in goals" ng-model="goal.checked" ng-checked="goal.checked">{{goal.text}}</ion-checkbox>
+      <ion-list show-delete="goal.showDelete" show-reorder="goal.showReorder">
+        <ion-item ng-repeat="goal in goals" ng-click="goal.checked = !goal.checked" class="item-icon-right">
+          <div class="item-checkbox">
+            <label>
+              <input type="checkbox" ng-model="goal.checked" ng-checked="goal.checked" class="icon pull-right">
+            </label>
+          </div>
+          {{goal.text}}
+
+          <ion-option-button class="button-assertive icon ion-trash-a" ng-click="goals.splice($index, 1)"></ion-option-button>
+          <ion-delete-button class="ion-minus-circled" ng-click="goals.splice($index, 1)"></ion-delete-button>
+          <ion-reorder-button class="ion-navicon" on-reorder="moveGoal(goal, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+      </ion-list>
     </ion-list>
   </ion-content>
 </ion-view>
