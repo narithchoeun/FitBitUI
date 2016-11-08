@@ -9,13 +9,17 @@
     </ion-list>
 
     <ion-list>
-      <ion-item class="item-divider text-center" id="account-divider">My Goals</ion-item>
+      <ion-item class="item-divider text-center" id="account-divider">
+        <i class="button button-small pull-left" ng-click="editGoals()">Edit</i>
+        My Goals
+        <i class="button button-small icon ion-navicon pull-right"></i>
+      </ion-item>
 
       <ion-item class="item-input-inset">
         <label class="item-input-wrapper">
-          <input type="text" placeholder="Type in a goal" ng-model="text">
+          <input type="text" placeholder="Type in a goal" ng-model="goal.text">
         </label>
-        <button class="button button-small button-balanced text-center" ng-tap()="addGoal()" ng-model="text"><i class="ion-plus-circled"></i> Add Goal</button>
+        <button class="button button-small button-balanced text-center" ng-click="addGoal()"><i class="icon ion-plus-circled"></i> Add Goal</button>
       </ion-item>
 
       <ion-checkbox ng-repeat="goal in goals" ng-model="goal.checked" ng-checked="goal.checked">{{goal.text}}</ion-checkbox>

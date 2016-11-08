@@ -13,7 +13,10 @@ angular.module('starter.controllers', [])
 .controller('CalendarCtrl', function($scope) {})
 
 .controller('AccountCtrl', function($scope) {
-  $scope.text = null;
+  $scope.goal = {
+    "text": "",
+    "checked": false
+  };
 
   $scope.goals = [
     {
@@ -35,16 +38,10 @@ angular.module('starter.controllers', [])
 
   $scope.addGoal = function(){
     console.log("user wants to add a goal");
-    if ($scope.text === ""){
+    if ($scope.goal.text === ""){
       console.log("empty input");
     } else {
-      $scope.goals.push(
-        {
-          "text": $scope.text,
-          "checked": false,
-          // "category": category
-        }
-      );
+      $scope.goals.push($scope.goal);
     }
   };
 
