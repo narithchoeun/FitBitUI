@@ -30,7 +30,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
@@ -49,6 +48,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+
+  //exercise tab and details
   .state('tab.exercise', {
     url: '/exercise',
     views: {
@@ -58,7 +59,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-
   //detail state for walking
   .state('tab.walking', {
     url: '/walking',
@@ -70,7 +70,27 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+  .state('tab.running', {
+    url: '/running',
+    views: {
+      'tab-exercise':{
+        templateUrl: 'templates/running-detail.html',
+        // controller: 'ExerciseCtrl'
+      }
+    }
+  })
+  .state('tab.weights', {
+    url: '/weights',
+    views: {
+      'tab-exercise':{
+        templateUrl: 'templates/weights-detail.html',
+        // controller: 'ExerciseCtrl'
+      }
+    }
+  })
 
+
+  //health tab and details
   .state('tab.health', {
     url: '/health',
     views: {
@@ -80,6 +100,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+
   .state('tab.nutrition', {
     url: '/nutrition',
     views: {
@@ -89,6 +110,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+
   .state('tab.calendar', {
     url: '/calendar',
     views: {
