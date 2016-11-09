@@ -45,7 +45,7 @@ angular.module('starter.controllers', [])
   ];
 
   $scope.addGoal = function(text) {
-    if ($scope.goal.text === ""){
+    if (text === ""){
       console.log("empty input");
     } else {
       $scope.goals.push($scope.goal);
@@ -55,15 +55,15 @@ angular.module('starter.controllers', [])
 
   $scope.moveGoal = function(goal, fromIndex, toIndex) {
     console.log("user wants to move goal");
-    $scope.goals.splice(fromIndex,1);
-    $scope.goals.splice(toIndex,0,goal);
+    $scope.goals.splice(fromIndex, 1);
+    $scope.goals.splice(toIndex, 0, goal);
   };
 
   $scope.onGoalDelete = function(goal, index){
     $scope.goals = $scope.goals.splice(index, 1);
   };
 
-  $scope.showConfirm = function(goal) {
+  $scope.showAddConfirm = function(goal) {
     var confirmPopup = $ionicPopup.confirm({
       title: 'Add a Goal',
       template: 'Are you sure you want to add this goal?'
@@ -72,7 +72,7 @@ angular.module('starter.controllers', [])
     confirmPopup.then(function(res) {
       if(res) {
         console.log('You are sure');
-        $scope.onGoalDelete(goal, index);
+        $scope.addGoal(goal.text);
       } else {
         console.log('You are not sure');
       }

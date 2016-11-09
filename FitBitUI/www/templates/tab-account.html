@@ -19,12 +19,12 @@
         <label class="item-input-wrapper">
           <input type="text" placeholder="Type in a goal" ng-model="goal.text">
         </label>
-        <button class="button button-small button-balanced text-center" ng-click="addGoal()"><i class="icon ion-plus-circled"></i> Add Goal</button>
+        <button class="button button-small button-balanced text-center" ng-click="showAddConfirm(goal.text)"><i class="icon ion-plus-circled"></i> Add Goal</button>
       </ion-item>
 
       <ion-list show-delete="goal.showDelete" show-reorder="goal.showReorder">
         <ion-item ng-repeat="goal in goals" ng-click="goal.checked = !goal.checked" class="item-icon-right">
-          <div class="item-checkbox">
+          <div class="item-checkbox" ng-click="goal.checked = !goal.checked">
             <label>
               <input type="checkbox" ng-model="goal.checked" ng-checked="goal.checked" class="icon pull-right">
             </label>
