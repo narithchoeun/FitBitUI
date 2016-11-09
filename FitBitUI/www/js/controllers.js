@@ -1,10 +1,15 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
-
-.controller('ExerciseCtrl', function($scope) {
-
+.controller('DashCtrl', function($scope) {
+  // $scope.days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+  // $scope.type = 'W';
+  // $scope.setType = function(event){
+  //   $scope.type = angular.element(event.target).text();
+  //   console.log($scope.type);
+  // };
 })
+
+.controller('ExerciseCtrl', function($scope) {})
 
 .controller('HealthCtrl', function($scope) {})
 
@@ -69,20 +74,27 @@ angular.module('starter.controllers', [])
   };
 
   $scope.showAddConfirm = function(text) {
-    var confirmPopup = $ionicPopup.confirm({
-      title: 'Add a Goal',
-      template: 'Are you sure you want to add this goal?'
-    });
+    if (text === ''){
+      $ionicPopup.alert({
+        title: 'Empty text field',
+        template: 'Please input a goal'
+      });
+    } else {
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Add a Goal',
+        template: 'Are you sure you want to add this goal?'
+      });
 
-    confirmPopup.then(function(res) {
-      if(res) {
-        console.log('ok adding');
-        $scope.addGoal(text);
-        console.log(text);
-      } else {
-        console.log('cancel');
-      }
-    });
+      confirmPopup.then(function(res) {
+        if(res) {
+          console.log('ok adding');
+          $scope.addGoal(text);
+          console.log(text);
+        } else {
+          console.log('cancel');
+        }
+      });
+    }
   };
 
   $scope.infoLabels = [
