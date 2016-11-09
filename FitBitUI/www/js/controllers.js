@@ -54,7 +54,6 @@ angular.module('starter.controllers', [])
   };
 
   $scope.moveGoal = function(goal, fromIndex, toIndex) {
-    console.log("user wants to move goal");
     $scope.goals.splice(fromIndex, 1);
     $scope.goals.splice(toIndex, 0, goal);
   };
