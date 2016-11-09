@@ -13,6 +13,7 @@ angular.module('starter.controllers', [])
 .controller('CalendarCtrl', function($scope) {})
 
 .controller('AccountCtrl', function($scope, $ionicPopup) {
+  $scope.input = "";
   $scope.goal = {
     "text": "",
     "checked": false,
@@ -48,8 +49,13 @@ angular.module('starter.controllers', [])
     if (text === ""){
       console.log("empty input");
     } else {
-      $scope.goals.push($scope.goal);
-      // $scope.goal.text = "";
+      $scope.goals.push({
+        "text": text,
+        "checked": false,
+        "showDelete": false,
+        "showReorder": false
+      });
+      $scope.input = "";
     }
   };
 
@@ -62,7 +68,7 @@ angular.module('starter.controllers', [])
     $scope.goals = $scope.goals.splice(index, 1);
   };
 
-  $scope.showAddConfirm = function(goal) {
+  $scope.showAddConfirm = function(text) {
     var confirmPopup = $ionicPopup.confirm({
       title: 'Add a Goal',
       template: 'Are you sure you want to add this goal?'
@@ -70,8 +76,9 @@ angular.module('starter.controllers', [])
 
     confirmPopup.then(function(res) {
       if(res) {
-        console.log('ok');
-        $scope.addGoal(goal.text);
+        console.log('ok adding');
+        $scope.addGoal(text);
+        console.log(text);
       } else {
         console.log('cancel');
       }
