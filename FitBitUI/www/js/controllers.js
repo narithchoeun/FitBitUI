@@ -71,10 +71,10 @@ angular.module('starter.controllers', [])
 
     confirmPopup.then(function(res) {
       if(res) {
-        console.log('You are sure');
+        console.log('ok');
         $scope.addGoal(goal.text);
       } else {
-        console.log('You are not sure');
+        console.log('cancel');
       }
     });
   };
