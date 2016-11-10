@@ -1,23 +1,35 @@
 <ion-view overflow-scroll="true" view-title="Dashboard">
-  <ion-content class="padding">
+  <ion-content class="padding" ng-controller="DashCtrl">
+    <!-- weekly date -->
+    <div class="button-bar">
+      <button class="button button-small button-positive button-outline" ng-click="setActive($event)" ng-repeat="day in days">{{day.day}}
+        <br>
+        <!-- <span class="badge badge-assertive align-left"> -->
+          {{day.date}}
+        <!-- </span> -->
+      </button>
+    </div>
+
+    <!-- categories -->
     <ion-list class="sidemenu-list">
+      <!-- current date  -->
+      <ion-item class="item-divider text-center" id="account-divider">Wednesday Nov 9, 2016</ion-item>
+      <!-- exercise item -->
       <ion-item class="exercise" href="#/tab/exercise">
         <h1>Exercise<i class="ion-happy-outline pull-right"></i></h1>
         </br>
         You're on the right Track
       </ion-item>
-
+      <!-- health item -->
       <ion-item class="health" href="#/tab/health">
         <h1>Health<i class="ion-sad-outline pull-right"></i></h1>
         </br>
-
         Your heart beat is higher than normal
       </ion-item>
-
+      <!-- nutrition item -->
       <ion-item class="nutrition" href="#/tab/nutrition">
         <h1>Nutrition<i class="ion-happy-outline pull-right"></i></h1>
         </br>
-
         You need to consume 2000 more calories
       </ion-item>
     </ion-list>

@@ -1,12 +1,41 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {
-  // $scope.days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-  // $scope.type = 'W';
-  // $scope.setType = function(event){
-  //   $scope.type = angular.element(event.target).text();
-  //   console.log($scope.type);
-  // };
+  $scope.days = [
+    {
+      "day": 'S',
+      "date": 6
+    },
+    {
+      "day": 'M',
+      "date": 7
+    },
+    {
+      "day": 'T',
+      "date": 8
+    },
+    {
+      "day": 'W',
+      "date": 9
+    },
+    {
+      "day": 'T',
+      "date": 10
+    },
+    {
+      "day": 'F',
+      "date": 11
+    },
+    {
+      "day": 'S',
+      "date": 12
+    }
+  ];
+  $scope.type = 'W';
+  $scope.setActive = function(event){
+    $scope.type = angular.element(event.target);
+    console.log($scope.type);
+  };
 })
 
 .controller('ExerciseCtrl', function($scope) {})
@@ -15,7 +44,49 @@ angular.module('starter.controllers', [])
 
 .controller('NutritionCtrl', function($scope) {})
 
-.controller('CalendarCtrl', function($scope) {})
+.controller('CalendarCtrl', function($scope, $ionicPopup) {
+  $scope.query = "";
+  $scope.friends = [
+    {
+      "name": "Alex",
+      "goal": "Lose 10 lbs"
+    },
+    {
+      "name": "Katarina",
+      "goal": "Lose 10 lbs"
+    },
+    {
+      "name": "Bella",
+      "goal": "Walk 1000 steps"
+    }
+  ];
+
+  $scope.groupGoal = function() {
+
+  }
+
+  $scope.invite = function(){
+
+  }
+
+  $scope.showInviteConfirm = function(text) {
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Invite a Friend',
+        template: 'Are you sure you want to invite ' + text + '?'
+      });
+
+      confirmPopup.then(function(res) {
+        if(res) {
+          console.log('ok adding');
+          $scope.invite(text);
+          console.log(text);
+        } else {
+          console.log('cancel');
+        }
+      });
+  };
+
+})
 
 .controller('AccountCtrl', function($scope, $ionicPopup) {
   $scope.input = "";
