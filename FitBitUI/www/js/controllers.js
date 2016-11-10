@@ -42,7 +42,63 @@ angular.module('starter.controllers', [])
 
 .controller('HealthCtrl', function($scope) {})
 
-.controller('NutritionCtrl', function($scope) {})
+.controller('NutritionCtrl', function($scope) {
+  /**
+  	console.log('hi@');
+  	angular.element('accordion'); //get elements by class name
+  	angular.element('accordion-item'); //get elements by class name
+
+  	  $scope.toggleGroup = function(accordion) {
+      accordion.show = !accordion.show;
+    };
+    $scope.isGroupShown = function(accordion) {
+      return accordion.show;
+    };
+    */
+
+
+      $scope.groups = [];
+  	for (var i=0; i<4; i++) {
+      $scope.groups[i] = {
+        name: i,
+        items: [],
+        show: false
+      };
+
+
+      for (var j=0; j<1; j++) {
+        $scope.groups[i].items.push(i + '-' + j);
+      }
+    }
+    angular.element('group');
+    /*
+     * if given group is the selected group, deselect it
+     * else, select the given group
+     */
+    $scope.toggleGroup = function(group) {
+      group.show = !group.show;
+    };
+    $scope.isGroupShown = function(group) {
+      return group.show;
+    };
+
+
+
+     $scope.doRefresh = function() {
+
+      console.log('Refreshing!');
+      $timeout( function() {
+        //simulate async response
+        $scope.accordion.push('New Accordion Item ' + Math.floor(Math.random() * 1000) + 4);
+
+        //Stop the ion-refresher from spinning
+        $scope.$broadcast('scroll.refreshComplete');
+
+      }, 1000);
+
+    };
+  	
+})
 
 .controller('CalendarCtrl', function($scope, $ionicPopup) {
   $scope.query = "";
