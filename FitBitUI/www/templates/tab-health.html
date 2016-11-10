@@ -2,18 +2,27 @@
   <ion-content>
     <ion-list>
       <ion-item href="#/tab/sleeping">
-        <img src="../img/sleeping.png" alt="sleeping" id="sleeping" >
-        Sleeping
+        <div class="row">
+          <div class="col">        <img src="../img/sleeping.png" alt="sleeping" id="sleeping" >
+          </div>
+          <div class="col"><h1 class="exercise_title">Sleeping</h1></div>
+        </div>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col col-70 col-offset-70"><i class="fa fa-clock-o" aria-hidden="true"></i> 8h 0min</div>
+        </div>
       </ion-item>
 
       <ion-item href="#/tab/bpm">
-        <img src="../img/bpm.png" alt="bpm" id="bpm" width="100">
-        BPM
-      </ion-item>
-      <ion-item>
-        <img src="../img/blood_pressure.png" alt="blood_pressure" id="blood_pressure" width="100">
-        Blood Pressure
-      </ion-item>
+        <div class="row">
+          <div class="col"><img src="../img/bpm.png" alt="bpm" id="bpm" width="100">
+          </div>
+          <div class="col"><h1 class="exercise_title">BPM</h1></div>
+        </div>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col col-70 col-offset-70 pull-right"><i class="fa fa-heart" aria-hidden="true"></i> 61 bpm resting</div>
+        </div>      </ion-item>
     </ion-list>
   </ion-content>
 </ion-view>
