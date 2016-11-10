@@ -1,6 +1,42 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope) {
+  $scope.days = [
+    {
+      "day": 'S',
+      "date": 6
+    },
+    {
+      "day": 'M',
+      "date": 7
+    },
+    {
+      "day": 'T',
+      "date": 8
+    },
+    {
+      "day": 'W',
+      "date": 9
+    },
+    {
+      "day": 'T',
+      "date": 10
+    },
+    {
+      "day": 'F',
+      "date": 11
+    },
+    {
+      "day": 'S',
+      "date": 12
+    }
+  ];
+  $scope.type = 'W';
+  $scope.setActive = function(event){
+    $scope.type = angular.element(event.target);
+    console.log($scope.type);
+  };
+})
 
 .controller('ExerciseCtrl', function($scope) {
 
@@ -11,7 +47,7 @@ angular.module('starter.controllers', [])
 
 
 .controller('NutritionCtrl', function($scope, $timeout) {
-/**	
+/**
 	console.log('hi@');
 	angular.element('accordion'); //get elements by class name
 	angular.element('accordion-item'); //get elements by class name
@@ -23,7 +59,7 @@ angular.module('starter.controllers', [])
     return accordion.show;
   };
   */
-  
+
 
     $scope.groups = [];
 	for (var i=0; i<4; i++) {
@@ -49,11 +85,11 @@ angular.module('starter.controllers', [])
   $scope.isGroupShown = function(group) {
     return group.show;
   };
-  
-  
-  
+
+
+
    $scope.doRefresh = function() {
-    
+
     console.log('Refreshing!');
     $timeout( function() {
       //simulate async response
@@ -61,11 +97,11 @@ angular.module('starter.controllers', [])
 
       //Stop the ion-refresher from spinning
       $scope.$broadcast('scroll.refreshComplete');
-    
+
     }, 1000);
-      
+
   };
-	
+
 })
 
 .controller('CalendarCtrl', function($scope) {})
@@ -136,14 +172,14 @@ angular.module('starter.controllers', [])
       }
     });
   };
-  
-  
+
+
   //For nutrition
 $scope.test = function()
 {
 	console.log('test function');
 };
-  
+
   $scope.infoLabels = [
     // {
     //   "title": "First Name",
