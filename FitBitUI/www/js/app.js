@@ -100,7 +100,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-  
+
   .state('tab.nutrition', {
     url: '/nutrition',
     views: {
@@ -135,5 +135,3 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $urlRouterProvider.otherwise('/tab/dash');
 
 });
-
-

@@ -1,6 +1,7 @@
 <ion-view view-title="Account" ng-controller="AccountCtrl">
   <ion-content class="padding">
     <ion-list>
+      <!-- information items -->
       <ion-item class="item item-divider text-center" id="account-divider">My Information</ion-item>
       <label class="item item-input item-label" ng-repeat="label in infoLabels">
         <span class="input-label">{{label.title}}</span>
@@ -9,32 +10,36 @@
     </ion-list>
 
     <ion-list>
+      <!-- item divider bar -->
       <ion-item class="item-divider text-center" id="account-divider">
         <i class="button button-small pull-left" ng-click="goal.showDelete = !goal.showDelete; goal.showReorder = false">Edit</i>
         My Goals
         <i class="button button-small icon ion-navicon pull-right" ng-click="goal.showReorder = ! goal.showReorder; goal.showDelete = false"></i>
       </ion-item>
 
+      <!-- add a goal to the list -->
       <ion-item class="item-input-inset">
         <label class="item-input-wrapper">
-          <input type="text" placeholder="Type in a goal" ng-model="goal.text">
+          <input type="text" placeholder="Type in a goal" ng-model="input">
         </label>
-        <button class="button button-small button-balanced text-center" ng-click="showAddConfirm(goal.text)"><i class="icon ion-plus-circled"></i> Add Goal</button>
+        <button class="button button-small button-balanced text-center" ng-click="showAddConfirm(input)"><i class="icon ion-plus-circled"></i> Add Goal</button>
       </ion-item>
-
-      <ion-list show-delete="goal.showDelete" show-reorder="goal.showReorder">
-        <ion-item ng-repeat="goal in goals" ng-click="goal.checked = !goal.checked" class="item-icon-right">
-          <div class="item-checkbox" ng-click="goal.checked = !goal.checked">
-            <label>
-              <input type="checkbox" ng-model="goal.checked" ng-checked="goal.checked" class="icon pull-right">
-            </label>
-          </div>
-          {{goal.text}}
-          <ion-option-button class="button-assertive icon ion-trash-a" ng-click="goals.splice($index, 1)"></ion-option-button>
-          <ion-delete-button class="ion-minus-circled" ng-click="goals.splice($index, 1)"></ion-delete-button>
-          <ion-reorder-button class="ion-navicon" on-reorder="moveGoal(goal, $fromIndex, $toIndex)"></ion-reorder-button>
-        </ion-item>
-      </ion-list>
     </ion-list>
+
+    <!-- display list of goals and edit/reorder function -->
+    <ion-list show-delete="goal.showDelete" show-reorder="goal.showReorder">
+      <ion-item ng-repeat="goal in goals" ng-click="goal.checked = !goal.checked" class="item-icon-right">
+        <div class="item-checkbox" ng-click="goal.checked = !goal.checked">
+          <label>
+            <input type="checkbox" ng-model="goal.checked" ng-checked="goal.checked" class="icon pull-right">
+          </label>
+        </div>
+        {{goal.text}}
+        <ion-option-button class="button-assertive icon ion-trash-a" ng-click="goals.splice($index, 1)"></ion-option-button>
+        <ion-delete-button class="ion-minus-circled" ng-click="goals.splice($index, 1)"></ion-delete-button>
+        <ion-reorder-button class="ion-navicon" on-reorder="moveGoal(goal, $fromIndex, $toIndex)"></ion-reorder-button>
+      </ion-item>
+    </ion-list>
+
   </ion-content>
 </ion-view>

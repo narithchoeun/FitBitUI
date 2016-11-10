@@ -1,10 +1,44 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
-
-.controller('ExerciseCtrl', function($scope) {
-
+.controller('DashCtrl', function($scope) {
+  $scope.days = [
+    {
+      "day": 'S',
+      "date": 6
+    },
+    {
+      "day": 'M',
+      "date": 7
+    },
+    {
+      "day": 'T',
+      "date": 8
+    },
+    {
+      "day": 'W',
+      "date": 9
+    },
+    {
+      "day": 'T',
+      "date": 10
+    },
+    {
+      "day": 'F',
+      "date": 11
+    },
+    {
+      "day": 'S',
+      "date": 12
+    }
+  ];
+  $scope.type = 'W';
+  $scope.setActive = function(event){
+    $scope.type = angular.element(event.target);
+    console.log($scope.type);
+  };
 })
+
+.controller('ExerciseCtrl', function($scope) {})
 
 .controller('HealthCtrl', function($scope) {})
 
@@ -38,9 +72,52 @@ angular.module('starter.controllers', [])
 	
 })
 
-.controller('CalendarCtrl', function($scope) {})
+.controller('CalendarCtrl', function($scope, $ionicPopup) {
+  $scope.query = "";
+  $scope.friends = [
+    {
+      "name": "Alex",
+      "goal": "Lose 10 lbs"
+    },
+    {
+      "name": "Katarina",
+      "goal": "Lose 10 lbs"
+    },
+    {
+      "name": "Bella",
+      "goal": "Walk 1000 steps"
+    }
+  ];
+
+  $scope.groupGoal = function() {
+
+  }
+
+  $scope.invite = function(){
+
+  }
+
+  $scope.showInviteConfirm = function(text) {
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Invite a Friend',
+        template: 'Are you sure you want to invite ' + text + '?'
+      });
+
+      confirmPopup.then(function(res) {
+        if(res) {
+          console.log('ok adding');
+          $scope.invite(text);
+          console.log(text);
+        } else {
+          console.log('cancel');
+        }
+      });
+  };
+
+})
 
 .controller('AccountCtrl', function($scope, $ionicPopup) {
+  $scope.input = "";
   $scope.goal = {
     "text": "",
     "checked": false,
@@ -76,13 +153,17 @@ angular.module('starter.controllers', [])
     if (text === ""){
       console.log("empty input");
     } else {
-      $scope.goals.push($scope.goal);
-      // $scope.goal.text = "";
+      $scope.goals.push({
+        "text": text,
+        "checked": false,
+        "showDelete": false,
+        "showReorder": false
+      });
+      $scope.input = "";
     }
   };
 
   $scope.moveGoal = function(goal, fromIndex, toIndex) {
-    console.log("user wants to move goal");
     $scope.goals.splice(fromIndex, 1);
     $scope.goals.splice(toIndex, 0, goal);
   };
@@ -91,20 +172,28 @@ angular.module('starter.controllers', [])
     $scope.goals = $scope.goals.splice(index, 1);
   };
 
-  $scope.showAddConfirm = function(goal) {
-    var confirmPopup = $ionicPopup.confirm({
-      title: 'Add a Goal',
-      template: 'Are you sure you want to add this goal?'
-    });
+  $scope.showAddConfirm = function(text) {
+    if (text === ''){
+      $ionicPopup.alert({
+        title: 'Empty text field',
+        template: 'Please input a goal'
+      });
+    } else {
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Add a Goal',
+        template: 'Are you sure you want to add this goal?'
+      });
 
-    confirmPopup.then(function(res) {
-      if(res) {
-        console.log('ok');
-        $scope.addGoal(goal.text);
-      } else {
-        console.log('cancel');
-      }
-    });
+      confirmPopup.then(function(res) {
+        if(res) {
+          console.log('ok adding');
+          $scope.addGoal(text);
+          console.log(text);
+        } else {
+          console.log('cancel');
+        }
+      });
+    }
   };
   
   
