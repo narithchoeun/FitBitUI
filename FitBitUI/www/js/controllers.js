@@ -38,75 +38,58 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ExerciseCtrl', function($scope) {
-
-})
+.controller('ExerciseCtrl', function($scope) {})
 
 .controller('HealthCtrl', function($scope) {})
 
+.controller('NutritionCtrl', function($scope) {})
 
-
-.controller('NutritionCtrl', function($scope, $timeout) {
-/**
-	console.log('hi@');
-	angular.element('accordion'); //get elements by class name
-	angular.element('accordion-item'); //get elements by class name
-
-	  $scope.toggleGroup = function(accordion) {
-    accordion.show = !accordion.show;
-  };
-  $scope.isGroupShown = function(accordion) {
-    return accordion.show;
-  };
-  */
-
-
-    $scope.groups = [];
-	for (var i=0; i<4; i++) {
-    $scope.groups[i] = {
-      name: i,
-      items: [],
-      show: false
-    };
-
-
-    for (var j=0; j<1; j++) {
-      $scope.groups[i].items.push(i + '-' + j);
+.controller('CalendarCtrl', function($scope, $ionicPopup) {
+  $scope.query = "";
+  $scope.friends = [
+    {
+      "name": "Alex",
+      "goal": "Lose 10 lbs"
+    },
+    {
+      "name": "Katarina",
+      "goal": "Lose 10 lbs"
+    },
+    {
+      "name": "Bella",
+      "goal": "Walk 1000 steps"
     }
+  ];
+
+  $scope.groupGoal = function() {
+
   }
-  angular.element('group');
-  /*
-   * if given group is the selected group, deselect it
-   * else, select the given group
-   */
-  $scope.toggleGroup = function(group) {
-    group.show = !group.show;
-  };
-  $scope.isGroupShown = function(group) {
-    return group.show;
-  };
 
+  $scope.invite = function(){
 
+  }
 
-   $scope.doRefresh = function() {
+  $scope.showInviteConfirm = function(text) {
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Invite a Friend',
+      template: 'Are you sure you want to invite ' + text + '?'
+    });
 
-    console.log('Refreshing!');
-    $timeout( function() {
-      //simulate async response
-      $scope.accordion.push('New Accordion Item ' + Math.floor(Math.random() * 1000) + 4);
-
-      //Stop the ion-refresher from spinning
-      $scope.$broadcast('scroll.refreshComplete');
-
-    }, 1000);
-
+    confirmPopup.then(function(res) {
+      if(res) {
+        console.log('ok adding');
+        $scope.invite(text);
+        console.log(text);
+      } else {
+        console.log('cancel');
+      }
+    });
   };
 
 })
 
-.controller('CalendarCtrl', function($scope) {})
-
 .controller('AccountCtrl', function($scope, $ionicPopup) {
+  $scope.input = "";
   $scope.goal = {
     "text": "",
     "checked": false,
@@ -142,13 +125,17 @@ angular.module('starter.controllers', [])
     if (text === ""){
       console.log("empty input");
     } else {
-      $scope.goals.push($scope.goal);
-      // $scope.goal.text = "";
+      $scope.goals.push({
+        "text": text,
+        "checked": false,
+        "showDelete": false,
+        "showReorder": false
+      });
+      $scope.input = "";
     }
   };
 
   $scope.moveGoal = function(goal, fromIndex, toIndex) {
-    console.log("user wants to move goal");
     $scope.goals.splice(fromIndex, 1);
     $scope.goals.splice(toIndex, 0, goal);
   };
@@ -157,28 +144,29 @@ angular.module('starter.controllers', [])
     $scope.goals = $scope.goals.splice(index, 1);
   };
 
-  $scope.showAddConfirm = function(goal) {
-    var confirmPopup = $ionicPopup.confirm({
-      title: 'Add a Goal',
-      template: 'Are you sure you want to add this goal?'
-    });
+  $scope.showAddConfirm = function(text) {
+    if (text === ''){
+      $ionicPopup.alert({
+        title: 'Empty text field',
+        template: 'Please input a goal'
+      });
+    } else {
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Add a Goal',
+        template: 'Are you sure you want to add this goal?'
+      });
 
-    confirmPopup.then(function(res) {
-      if(res) {
-        console.log('ok');
-        $scope.addGoal(goal.text);
-      } else {
-        console.log('cancel');
-      }
-    });
+      confirmPopup.then(function(res) {
+        if(res) {
+          console.log('ok adding');
+          $scope.addGoal(text);
+          console.log(text);
+        } else {
+          console.log('cancel');
+        }
+      });
+    }
   };
-
-
-  //For nutrition
-$scope.test = function()
-{
-	console.log('test function');
-};
 
   $scope.infoLabels = [
     // {
