@@ -1,37 +1,52 @@
 <ion-view overflow-scroll="true" view-title="Nutrition">
   <ion-content class="padding" class="refresh" ng-controller="NutritionCtrl">
   <ion-refresher on-refresh="doRefresh()"> </ion-refresher>
-  
-    <ion-list class="list">
-	
-      <ion-item class="" href="#/tab/nutrition" ng-class="{active: isGroupShown(accordion)}">
+
+
+
+<!--  
+    <ion-list class="list" ng-class="accordion">
+
+      <ion-item class="list" href="#/tab/nutrition" ng-class="{active: isGroupShown(accordion)}">
               <i class="icon" ng-class="isGroupShown(accordion) ? 'ion-minus' : 'ion-plus'"></i>
-        <h2 ng-click="test()" class="accordion">Calorie Intake</h2>
-		<div class="panel">
+        <h2 ng-click="test()" ng-class="accordion">Calorie Intake</h2>
+		<div class="accordion">
 			<p>test test test test</p>
         </div>
       </ion-item>
-
-	  
-      <ion-item class="" href="#/tab/nutrition">
-
-        <<h2 ng-click="test()" class="accordion">Macros</h2>
-		<p>test test test test</p>
-        </br>
-      </ion-item>
-
-      <ion-item class="" href="#/tab/nutrition">
-        <h2 ng-click="test()" class="accordion">Water</h2>
-		<p>test test test test</p>
-        </br>
-      </ion-item>
-	  
-	  <ion-item class="" href="#/tab/nutrition">
-        <h2 ng-click="test()" class="accordion">Alcohol</h2>
-		<p>test test test test</p>
-        </br>
-      </ion-item>
     </ion-list>
+-->
 
+      <ion-list>
+        <div ng-repeat="group in groups">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}">
+              <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+            Calorie Intake
+			<ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+             test
+          </ion-item>
+		  <ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+             water test
+          </ion-item>
+          </ion-item>
+
+          
+        </div>
+
+      </ion-list>
   </ion-content>
 </ion-view>
+
+
+<!--
+Macros
+Water
+Alcohol
+
+-->
