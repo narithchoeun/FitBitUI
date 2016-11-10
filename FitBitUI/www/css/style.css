@@ -47,8 +47,6 @@
   font-style: italic;
 }
 
-
-
 /* test nutrition
 .item-expand {
   position: relative;
@@ -87,3 +85,8 @@
 .refresh {
   cursor: url('http://ionicframework.com/img/finger.png'), auto;
 }
+/*
+.fa-map-marker{
+  color: green;
+}
+*/

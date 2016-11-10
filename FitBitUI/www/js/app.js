@@ -100,6 +100,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+  .state('tab.sleeping', {
+    url: '/sleeping',
+    views: {
+      'tab-health': {
+        templateUrl: 'templates/sleeping-detail.html'
+        // controller:'HealthCtrl'
+      }
+    }
+  })
+  .state('tab.bpm', {
+    url: '/bpm',
+    views: {
+      'tab-health': {
+        templateUrl: 'templates/bpm-detail.html'
+      }
+    }
+  })
 
   .state('tab.nutrition', {
     url: '/nutrition',
