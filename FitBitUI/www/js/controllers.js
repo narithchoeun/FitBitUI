@@ -8,7 +8,35 @@ angular.module('starter.controllers', [])
 
 .controller('HealthCtrl', function($scope) {})
 
-.controller('NutritionCtrl', function($scope) {})
+.controller('NutritionCtrl', function($scope, $timeout) {
+	
+	console.log('hi@');
+	angular.element('accordion'); //get elements by class name
+
+	  $scope.toggleGroup = function(accordion) {
+    accordion.show = !accordion.show;
+  };
+  $scope.isGroupShown = function(accordion) {
+    return accordion.show;
+  };
+  
+  
+  
+   $scope.doRefresh = function() {
+    
+    console.log('Refreshing!');
+    $timeout( function() {
+      //simulate async response
+      $scope.accordion.push('New Accordion Item ' + Math.floor(Math.random() * 1000) + 4);
+
+      //Stop the ion-refresher from spinning
+      $scope.$broadcast('scroll.refreshComplete');
+    
+    }, 1000);
+      
+  };
+	
+})
 
 .controller('CalendarCtrl', function($scope) {})
 
@@ -78,7 +106,14 @@ angular.module('starter.controllers', [])
       }
     });
   };
-
+  
+  
+  //For nutrition
+$scope.test = function()
+{
+	console.log('test function');
+};
+  
   $scope.infoLabels = [
     // {
     //   "title": "First Name",
