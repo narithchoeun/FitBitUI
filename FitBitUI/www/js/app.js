@@ -128,6 +128,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+
   .state('tab.calendar', {
     url: '/calendar',
     views: {
@@ -137,11 +138,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-  .state('tab.ongoing', {
-    url: '/ongoing',
+  .state('tab.goal', {
+    url: '/goal',
     views: {
       'tab-calendar': {
-        templateUrl: 'templates/ongoing-detail.html',
+        templateUrl: 'templates/goal-detail.html',
         controller: 'CalendarCtrl'
       }
     }
