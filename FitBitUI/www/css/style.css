@@ -71,7 +71,7 @@
 */
 .list
 {
-	
+
 }
 .list .item.item-accordion {
   line-height: 38px;
@@ -101,6 +101,9 @@
 .icon.ion-fork
 {
 	margin-right:30px;
+}
+.fa-moon-o{
+  color:orangered;
 }
 /*
 .fa-map-marker{
