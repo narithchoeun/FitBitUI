@@ -10,7 +10,7 @@
       </ion-item>
 
       <!-- friend items -->
-      <ion-item class="item" ng-repeat="friend in friends | filter: query">
+      <ion-item class="item" ng-repeat="friend in friends | filter:query">
         {{friend.name}}
         <button class="button button-medium button-clear button-positive pull-right" ng-click="showInviteConfirm(friend.name)"><i class="icon ion-plus-circled"></i></button>
       </ion-item>
