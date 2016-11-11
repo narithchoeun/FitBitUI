@@ -4,37 +4,45 @@ angular.module('starter.controllers', [])
   $scope.days = [
     {
       "day": 'S',
-      "date": 6
+      "date": 6,
+      "active": 1
     },
     {
       "day": 'M',
-      "date": 7
+      "date": 7,
+      "active": 2
     },
     {
       "day": 'T',
-      "date": 8
+      "date": 8,
+      "active": 3
     },
     {
       "day": 'W',
-      "date": 9
+      "date": 9,
+      "active": 4
     },
     {
       "day": 'T',
-      "date": 10
+      "date": 10,
+      "active": 5
     },
     {
       "day": 'F',
-      "date": 11
+      "date": 11,
+      "active": 6
     },
     {
       "day": 'S',
-      "date": 12
+      "date": 12,
+      "active": 7
     }
   ];
   $scope.type = 'W';
   $scope.setActive = function(event){
-    $scope.type = angular.element(event.target);
-    console.log($scope.type);
+    console.log(event);
+    // $scope.type = angular.element(event.target);
+    // console.log('type ' + $scope.type);
   };
 })
 
@@ -121,7 +129,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('CalendarCtrl', function($scope, $ionicPopup, $state) {
-  $scope.query = "";
+  $scope.query = {};
   $scope.friends = [
     {
       "name": "Alex",

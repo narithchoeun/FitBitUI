@@ -7,14 +7,14 @@
       <!-- search bar -->
       <ion-item class="item-input-inset">
         <label class="item-input-wrapper">
-          <input type="text" placeholder="Search for a friend" ng-model="query">
+          <input type="text" placeholder="Search for a friend" ng-model="query.text">
         </label>
         <button class="button button-small button-positive item-icon-left"><i class="ion-search"></i> Search</button>
       </ion-item>
 
       <ion-list>
         <!-- friend items -->
-        <ion-item class="item" ng-repeat="friend in friends | filter: query">
+        <ion-item class="item" ng-repeat="friend in friends | filter: query.text">
           {{friend.name}}
           <button class="button button-medium button-clear button-positive pull-right" ng-click="showInviteConfirm(friend.name)"><i class="icon ion-plus-circled"></i></button>
         </ion-item>
