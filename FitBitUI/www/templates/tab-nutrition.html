@@ -16,9 +16,10 @@
       </ion-item>
     </ion-list>
 -->
-
+Monday
       <ion-list>
         <div ng-repeat="group in groups">
+		
           <ion-item class="item-stable"
                     ng-click="toggleGroup(group)"
                     ng-class="{active: isGroupShown(group)}">
@@ -37,14 +38,41 @@
 		  <ion-item class="item-accordion"
                     ng-repeat="item in group.items"
                     ng-show="isGroupShown(group)">
-             Fat<br>20g/60%
+             Fats<br>20g/60%
           </ion-item>
           </ion-item>
-
-          
         </div>
-
       </ion-list>
+	  
+	  
+	  
+	  <ion-list>
+        <div ng-repeat="group in groups">
+		
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}">
+              <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+            Micros<br>987/1700
+			<ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+             Calcium<br>10mg
+          </ion-item>
+		  <ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+             Vitamin B12<br>20mg
+          </ion-item>
+		  <ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+             Zinc<br>20g
+          </ion-item>
+          </ion-item>
+        </div>
+      </ion-list>
+	  
   </ion-content>
 </ion-view>
 

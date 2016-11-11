@@ -78,7 +78,7 @@ angular.module('starter.controllers', [])
       $scope.groups[i].items.push(i + j);
       $scope.groups = [];
     }
-    	for (var i=0; i<4; i++) {
+    	for (var i=0; i<1; i++) {
         $scope.groups[i] = {
           name: i,
           items: [],
