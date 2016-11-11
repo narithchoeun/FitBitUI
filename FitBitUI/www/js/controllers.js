@@ -94,10 +94,7 @@ angular.module('starter.controllers', [])
 
  
     // angular.element('group');
-    /*
-     * if given group is the selected group, deselect it
-     * else, select the given group
-     */
+ 
     $scope.toggleGroup = function(group) 
 	{
       group.show = !group.show;
@@ -125,6 +122,36 @@ angular.module('starter.controllers', [])
       }, 1000);
 
     };
+
+	/*Date function*/
+	var myDate = new Date();
+
+  $scope.monthDayYearSelected = myDate;
+  $scope.dateSelected = myDate;
+
+  $scope.changeMonthDayYear = function(monthDayYearSelected) {
+    console.log(monthDayYearSelected);
+    $scope.dateSelected = monthDayYearSelected;
+  }
+
+  $scope.changeDate = function(newdate) {
+    console.log(newdate);
+    $scope.monthDayYearSelected = newdate;
+  }
+	
+
+
+/*Test Graph*/
+$scope.graph = {};
+  $scope.graph.data = [
+    //Current
+    [23.7, 23.2, 23.5, 22.9, 29.7, 29.2, 28.8],
+    //Goal
+    [15, 15, 15, 15, 15, 15, 15]
+  ];
+  //hopefully will cross reference both idk tho
+  $scope.graph.labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  $scope.graph.series = ['Current', 'Goal'];
 
 })
 

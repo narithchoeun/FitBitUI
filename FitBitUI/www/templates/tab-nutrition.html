@@ -1,21 +1,9 @@
 <ion-view overflow-scroll="true" view-title="Nutrition">
   <ion-content class="padding" class="refresh" ng-controller="NutritionCtrl">
   <ion-refresher on-refresh="doRefresh()"> </ion-refresher>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
 
-
-
-<!--  
-    <ion-list class="list" ng-class="accordion">
-
-      <ion-item class="list" href="#/tab/nutrition" ng-class="{active: isGroupShown(accordion)}">
-              <i class="icon" ng-class="isGroupShown(accordion) ? 'ion-minus' : 'ion-plus'"></i>
-        <h2 ng-click="test()" ng-class="accordion">Calorie Intake</h2>
-		<div class="accordion">
-			<p>test test test test</p>
-        </div>
-      </ion-item>
-    </ion-list>
--->
+<input type="date" ng-model="dateSelected" ng-change="changeDate(dateSelected)" />
 <ion-list><!--main list-->
 <h3 ng-repeat="Day in Days">{{Day}}</h3>
       <ion-list>
@@ -113,6 +101,12 @@
         </div>
       </ion-list>
 </ion-list><!--end main list -->	  
+	  
+	  
+	  <!-- GRAPH TEST -->
+	  
+	  <h3>BMI Graph</h3>
+    <canvas id="bar" class="chart chart-line" data="graph.data" labels="graph.labels" series='graph.series' height="30"></canvas>
 	  
   </ion-content>
 </ion-view>
