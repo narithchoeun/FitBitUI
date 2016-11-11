@@ -36,6 +36,22 @@ angular.module('starter.controllers', [])
     $scope.type = angular.element(event.target);
     console.log($scope.type);
   };
+
+  /*Date function*/
+  var myDate = new Date();
+
+  $scope.monthDayYearSelected = myDate;
+  $scope.dateSelected = myDate;
+
+  $scope.changeMonthDayYear = function(monthDayYearSelected) {
+    console.log(monthDayYearSelected);
+    $scope.dateSelected = monthDayYearSelected;
+  }
+
+  $scope.changeDate = function(newdate) {
+    console.log(newdate);
+    $scope.monthDayYearSelected = newdate;
+  }
 })
 
 .controller('ExerciseCtrl', function($scope) {})
@@ -45,72 +61,72 @@ angular.module('starter.controllers', [])
 .controller('NutritionCtrl', function($scope) {
 
     $scope.groups = [];
-  	for (var i=0; i<1; i++) 
+  	for (var i=0; i<1; i++)
 	{
-      $scope.groups[i] = 
+      $scope.groups[i] =
 	  {
         name: i,
         items: [],
         show: false
     };
-	  
-    for (var j=0; j<1; j++) 
+
+    for (var j=0; j<1; j++)
 		{
       $scope.groups[i].items.push(i + j);
 		}
 	};
-	
+
 	$scope.groups2 = [];
-    for (var a=0; a<1; a++) 
+    for (var a=0; a<1; a++)
 	{
-        $scope.groups2[a] = 
+        $scope.groups2[a] =
 		{
           name: a,
           items: [],
           show: false
         };
-    for (var b=0; b<1; b++) 
+    for (var b=0; b<1; b++)
 		{
           $scope.groups2[a].items.push(a + '-' + b);
 		}
     };
-	
+
 	$scope.groups3 = [];
-    for (var c=0; c<1; c++) 
+    for (var c=0; c<1; c++)
 	{
-        $scope.groups3[c] = 
+        $scope.groups3[c] =
 		{
           name: c,
           items: [],
           show: false
         };
-    for (var d=0; d<1; d++) 
+    for (var d=0; d<1; d++)
 		{
           $scope.groups3[c].items.push(c + '-' + d);
 		}
     };
-	
-	
 
- 
+
+
+
     // angular.element('group');
- 
-    $scope.toggleGroup = function(group) 
+
+    $scope.toggleGroup = function(group)
 	{
       group.show = !group.show;
     };
-    $scope.isGroupShown = function(group) 
+    $scope.isGroupShown = function(group)
 	{
       return group.show;
     };
 
 
 	$scope.day =['Day 1'];
-     $scope.doRefresh = function() 
+     $scope.doRefresh = function()
 	 {
 
       console.log('Refreshing!');
-      $timeout( function() 
+      $timeout( function()
 	  {
 		var x=0
         //simulate async response
@@ -138,7 +154,7 @@ angular.module('starter.controllers', [])
     console.log(newdate);
     $scope.monthDayYearSelected = newdate;
   }
-	
+
 
 
 /*Test Graph*/
@@ -154,7 +170,7 @@ $scope.graph = {};
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
   };
-  
+
 
 })
 
@@ -200,7 +216,7 @@ $scope.graph = {};
     });
   };
 
-  
+
 })
 
 .controller('AccountCtrl', function($scope, $ionicPopup) {

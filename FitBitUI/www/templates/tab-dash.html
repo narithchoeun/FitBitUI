@@ -1,19 +1,18 @@
 <ion-view overflow-scroll="true" view-title="Dashboard">
   <ion-content class="padding" ng-controller="DashCtrl">
+    <input type="date" ng-model="dateSelected" ng-change="changeDate(dateSelected)">
     <!-- weekly date -->
-    <div class="button-bar">
+    <!-- <div class="button-bar">
       <button class="button button-small button-positive button-outline" ng-click="setActive($event)" ng-repeat="day in days">{{day.day}}
         <br>
-        <!-- <span class="badge badge-assertive align-left"> -->
           {{day.date}}
-        <!-- </span> -->
       </button>
-    </div>
+    </div> -->
 
     <!-- categories -->
     <ion-list class="sidemenu-list">
       <!-- current date  -->
-      <ion-item class="item-divider text-center" id="account-divider">Wednesday Nov 9, 2016</ion-item>
+      <!-- <ion-item class="item-divider text-center" id="account-divider">Wednesday Nov 9, 2016</ion-item> -->
       <!-- exercise item -->
       <ion-item class="exercise" href="#/tab/exercise">
         <h1>Exercise<i class="ion-happy-outline pull-right"></i></h1>
