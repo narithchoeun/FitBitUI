@@ -7,14 +7,22 @@
 <ion-list><!--main list-->
 <h3 ng-repeat="Day in Days">{{Day}}</h3>
       <ion-list>
+        <ion-item class="item-input-inset">
+          <label class="item-input-wrapper">
+            <input type="text" placeholder="What did you eat today ?" ng-model="input">
+          </label>
+          <button class="button button-small button-positive text-center" ng-click="showAddConfirm(input)"><i class="icon ion-plus-circled"></i> Add Food</button>
+        </ion-item>
+
+
         <div ng-repeat="group in groups">
-		
+
           <ion-item class="item-stable"
                     ng-click="toggleGroup(group)"
                     ng-class="{active: isGroupShown(group)}">
               <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
-            <h2 class="title">Calorie Intake<i class="icon ion-fork"></i> <br>987/1700</h2>
-			
+            <h2 class="title">Calorie Intake <i class="icon ion-fork"></i> <br>987/1700</h2>
+
 			<ion-item class="item-accordion"
                     ng-repeat="item in group.items"
                     ng-show="isGroupShown(group)">
@@ -36,13 +44,13 @@
 
 	  <ion-list>
         <div ng-repeat="group in groups2">
-		
+
           <ion-item class="item-stable"
                     ng-click="toggleGroup(group)"
                     ng-class="{active: isGroupShown(group)}">
               <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
-            <h2 class="title">Micros<i class="icon ion-fork"></i><br>987/1700 </h2>
-			
+            <h2 class="title">Micros <i class="icon ion-fork"></i><br>987/1700 </h2>
+
 			<ion-item class="item-accordion"
                     ng-repeat="item in group.items"
                     ng-show="isGroupShown(group)">
@@ -81,15 +89,18 @@
           </ion-item>
         </div>
       </ion-list>
+  <ion-item class="item-input-inset">
+    <button class="button button-small button-positive text-center" ng-click="showAddConfirm(input)"><i class="icon ion-plus-circled"></i> Add a glass of water</button>
+  </ion-item>
 	  <ion-list>
         <div ng-repeat="group in groups3">
-		
+
           <ion-item class="item-stable"
                     ng-click="toggleGroup(group)"
                     ng-class="{active: isGroupShown(group)}">
               <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
-            <h2 class="title">Water<i class="icon ion-fork"></i><br>987/1700</h2>
-			
+            <h2 class="title">Water <i class="fa fa-tint" aria-hidden="true"></i><br>987/1700</h2>
+
 			 <i class="icon ion-ios-water"></i>
 			<ion-item class="item-accordion"
                     ng-repeat="item in group.items"
@@ -100,17 +111,17 @@
           </ion-item>
         </div>
       </ion-list>
-</ion-list><!--end main list -->	  
-	  
-	  
+</ion-list><!--end main list -->
+
+
 	  <!-- GRAPH TEST -->
-	  
+
 	  <h3>BMI Graph</h3>
     <div class="graph">
 		<canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options"
-		chart-dataset-override="datasetOverride" chart-click="onClick" options="{showToolTips:false}"> </canvas> 
+		chart-dataset-override="datasetOverride" chart-click="onClick" options="{showToolTips:false}"> </canvas>
 	</div>
-	  
+
   </ion-content>
 </ion-view>
 
