@@ -171,10 +171,11 @@ $scope.graph = {};
     console.log(points, evt);
   };
 
+$scope.input="";
 $scope.food = {
   "text": ""
 }
-$scope.addGoal = function(text) {
+$scope.addFood = function(text) {
   if (text === ""){
     console.log("empty input");
   } else {
@@ -185,7 +186,7 @@ $scope.addGoal = function(text) {
     //   "showReorder": false
     // });
     console.log(text)
-    $scope.food.text = "";
+    $scope.input = "";
   }
 };
 $scope.showAddConfirm = function(text) {
@@ -204,7 +205,7 @@ $scope.showAddConfirm = function(text) {
       if(res) {
         console.log('ok');
         $scope.addFood(text);
-        console.log(text);
+        // console.log(text);
       } else {
         console.log('cancel');
       }
