@@ -118,6 +118,15 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services'])
       }
     }
   })
+  .state('tab.calories', {
+    url: '/calories',
+    views: {
+      'tab-health': {
+        templateUrl: 'templates/calories-detail.html'
+      }
+    }
+  })
+
 
   .state('tab.nutrition', {
     url: '/nutrition',
