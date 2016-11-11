@@ -58,7 +58,7 @@ angular.module('starter.controllers', [])
 
 .controller('HealthCtrl', function($scope) {})
 
-.controller('NutritionCtrl', function($scope) {
+.controller('NutritionCtrl', function($scope, $ionicPopup) {
 
     $scope.groups = [];
   	for (var i=0; i<1; i++)
@@ -171,6 +171,46 @@ $scope.graph = {};
     console.log(points, evt);
   };
 
+$scope.food = {
+  "text": ""
+}
+$scope.addGoal = function(text) {
+  if (text === ""){
+    console.log("empty input");
+  } else {
+    // $scope.push({
+    //   "text": text,
+    //   "checked": false,
+    //   "showDelete": false,
+    //   "showReorder": false
+    // });
+    console.log(text)
+    $scope.food.text = "";
+  }
+};
+$scope.showAddConfirm = function(text) {
+  if (text === ''){
+    $ionicPopup.alert({
+      title: 'Empty text field',
+      template: 'Please input a food'
+    });
+  } else {
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Add a Food',
+      template: 'Are you sure you want to add this food?'
+    });
+
+    confirmPopup.then(function(res) {
+      if(res) {
+        console.log('ok');
+        $scope.addFood(text);
+        console.log(text);
+      } else {
+        console.log('cancel');
+      }
+    });
+  }
+};
 
 })
 
@@ -198,25 +238,6 @@ $scope.graph = {};
   $scope.invite = function(){
 
   }
-
-  $scope.showInviteConfirm = function(text) {
-    var confirmPopup = $ionicPopup.confirm({
-      title: 'Invite a Friend',
-      template: 'Are you sure you want to invite ' + text + '?'
-    });
-
-    confirmPopup.then(function(res) {
-      if(res) {
-        console.log('ok adding');
-        $scope.invite(text);
-        console.log(text);
-      } else {
-        console.log('cancel');
-      }
-    });
-  };
-
-
 })
 
 .controller('AccountCtrl', function($scope, $ionicPopup) {
