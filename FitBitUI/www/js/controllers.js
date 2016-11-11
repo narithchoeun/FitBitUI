@@ -58,36 +58,39 @@ angular.module('starter.controllers', [])
 
 
 	  $scope.toggleGroup = function(accordion) {
-    accordion.show = !accordion.show;
-  };
-  $scope.isGroupShown = function(accordion) {
-    return accordion.show;
-  };
-  
+      accordion.show = !accordion.show;
+    };
+    $scope.isGroupShown = function(accordion) {
+      return accordion.show;
+    };
+
 
     $scope.groups = [];
-	for (var i=0; i<1; i++) {
-    $scope.groups[i] = {
-      name: i,
-      items: [],
-      show: false
-    };
-    for (var j=0; j<1; j++) {
-      $scope.groups[i].items.push(i +j);
-      $scope.groups = [];
-  	for (var i=0; i<4; i++) {
+  	for (var i=0; i<1; i++) {
       $scope.groups[i] = {
         name: i,
         items: [],
         show: false
-      };
+      }
 
 
-      for (var j=0; j<1; j++) {
-        $scope.groups[i].items.push(i + '-' + j);
+    for (var j=0; j<1; j++) {
+      $scope.groups[i].items.push(i + j);
+      $scope.groups = [];
+    }
+    	for (var i=0; i<4; i++) {
+        $scope.groups[i] = {
+          name: i,
+          items: [],
+          show: false
+        };
+
+        for (var j=0; j<1; j++) {
+          $scope.groups[i].items.push(i + '-' + j);
+        }
       }
     }
-    angular.element('group');
+    // angular.element('group');
     /*
      * if given group is the selected group, deselect it
      * else, select the given group
@@ -114,7 +117,7 @@ angular.module('starter.controllers', [])
       }, 1000);
 
     };
-  	
+
 })
 
 .controller('CalendarCtrl', function($scope, $ionicPopup) {
@@ -131,7 +134,6 @@ angular.module('starter.controllers', [])
     {
       "name": "Bella",
       "goal": "Walk 1000 steps"
->>>>>>> 5a5afda679eee04c7958f567bd61e09a53bec3da
     }
   ];
 
