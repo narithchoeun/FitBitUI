@@ -23,16 +23,21 @@
                     ng-click="toggleGroup(group)"
                     ng-class="{active: isGroupShown(group)}">
               <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
-            Calorie Intake
+            Calorie Intake<br>987/1700
 			<ion-item class="item-accordion"
                     ng-repeat="item in group.items"
                     ng-show="isGroupShown(group)">
-             test
+             Protein<br>25%
           </ion-item>
 		  <ion-item class="item-accordion"
                     ng-repeat="item in group.items"
                     ng-show="isGroupShown(group)">
-             water test
+             Carbs<br>20g/60%
+          </ion-item>
+		  <ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+             Fat<br>20g/60%
           </ion-item>
           </ion-item>
 
