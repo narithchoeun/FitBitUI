@@ -90,7 +90,9 @@
         </div>
       </ion-list>
   <ion-item class="item-input-inset">
-    <button class="button button-small button-positive text-center" ng-click="showAddConfirm(input)"><i class="icon ion-plus-circled"></i> Add a glass of water</button>
+  <div ng-init="items = [{name:'water', count:0}}">
+    <button class="button button-small button-positive text-center" ng-click="increment(item)""><i class="icon ion-plus-circled">
+	</i> Add a glass of water</button> {{item.count}}
   </ion-item>
 	  <ion-list>
         <div ng-repeat="group in groups3">
@@ -101,22 +103,26 @@
               <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
             <h2 class="title">Water <i class="fa fa-tint" aria-hidden="true"></i><br>987/1700</h2>
 
+	
 			 <i class="icon ion-ios-water"></i>
 			<ion-item class="item-accordion"
                     ng-repeat="item in group.items"
                     ng-show="isGroupShown(group)">
+					
              Glasses of water: 12 glass<br>
 			 Fluid oz: 9
-          </ion-item>
+			 
+			 
+			</ion-item>
           </ion-item>
         </div>
       </ion-list>
 </ion-list><!--end main list -->
 
 
-	  <!-- GRAPH TEST -->
+	  <!-- GRAPH TEST 
 
-	  <h3>BMI Graph</h3>
+	  <h3>BMI Graph</h3>-->
     <div class="graph">
 		<canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options"
 		chart-dataset-override="datasetOverride" chart-click="onClick" options="{showToolTips:false}"> </canvas>

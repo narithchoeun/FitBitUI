@@ -155,7 +155,10 @@ angular.module('starter.controllers', [])
     $scope.monthDayYearSelected = newdate;
   }
 
-
+/*increment water*/
+$scope.increment = function(item){
+            item.count += 1;
+          }
 
 /*Test Graph*/
 $scope.graph = {};
