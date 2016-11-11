@@ -6,25 +6,23 @@
           <ion-item class="item item-icon-right" ng-repeat="friend in group.friends">
             {{friend.name}}
           </ion-item>
-          <span class="icon ion-ios-arrow-right"></span>
-
       </ion-item>
     </ion-list>
 
       <!-- search bar -->
-      <ion-item class="item-input-inset">
+      <!-- <ion-item class="item-input-inset">
         <label class="item-input-wrapper">
           <input type="text" placeholder="Search for a friend" ng-model="query.text">
         </label>
         <button class="button button-small button-positive item-icon-left"><i class="ion-search"></i> Search</button>
-      </ion-item>
+      </ion-item> -->
 
-      <ion-list>
+      <!-- <ion-list> -->
         <!-- friend items -->
-        <ion-item class="item" ng-repeat="friend in friends | filter: query.text">
+        <!-- <ion-item class="item" ng-repeat="friend in friends | filter: query.text">
           {{friend.name}}
           <button class="button button-medium button-clear button-positive pull-right" ng-click="showInviteConfirm(friend.name)"><i class="icon ion-plus-circled"></i></button>
         </ion-item>
-      </ion-list>
+      </ion-list> -->
   </ion-content>
 </ion-view>
