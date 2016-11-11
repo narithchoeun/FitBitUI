@@ -128,12 +128,8 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('CalendarCtrl', function($scope, $ionicPopup, $state) {
+.controller('GroupCtrl', function($scope, $ionicPopup) {
   $scope.query = {};
-  $scope.item = {
-    "goal": "",
-    "friends": []
-  };
   $scope.index = {};
 
   $scope.friends = [
@@ -178,16 +174,6 @@ angular.module('starter.controllers', [])
 
   }
 
-  $scope.showDetail = function(index){
-    $scope.index = index;
-    $scope.item = $scope.onGoing[$scope.index];
-    console.log($scope.item);
-    // console.log($scope.item.friends[0].name);
-    $state.go('tab.goal', {players: $scope.item.friends});
-    console.log($stateParams.players);
-
-  }
-
   $scope.showInviteConfirm = function(text) {
     var confirmPopup = $ionicPopup.confirm({
       title: 'Invite a Friend',
@@ -197,7 +183,7 @@ angular.module('starter.controllers', [])
     confirmPopup.then(function(res) {
       if(res) {
         console.log('ok adding');
-        $scope.invite(text);
+        // $scope.invite(text);
         console.log(text);
       } else {
         console.log('cancel');
@@ -207,6 +193,7 @@ angular.module('starter.controllers', [])
 
 })
 
+//accountr controller
 .controller('AccountCtrl', function($scope, $ionicPopup) {
   $scope.input = "";
   $scope.goal = {
