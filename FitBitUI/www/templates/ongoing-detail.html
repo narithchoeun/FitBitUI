@@ -1,0 +1,18 @@
+<ion-view view-title="Ongoing Goals" ng-controller="CalendarCtrl">
+  <ion-nav-bar-back-button class="button-clear"><i class="ion-arrow-left-c"></i></ion-nav-bar-back-button>
+  <ion-content>
+    <ion-item class="item-divider text-center" id="account-divider">
+      Ongoing Group Goals
+    </ion-item>
+
+    <ion-list>
+      <ion-item class="item" ng-repeat="group in onGoing">
+        {{group.goal}} -
+        <!-- {{group.friends}} -->
+        <span ng-repeat="friend in group.friends">{{friend.name}} </span>
+        <!-- <br>
+        {{group.friends}}
+      </ion-item>
+    </ion-list>
+  </ion-content> -->
+</ion-view>

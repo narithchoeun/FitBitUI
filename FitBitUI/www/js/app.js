@@ -137,6 +137,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+  .state('tab.ongoing', {
+    url: '/ongoing',
+    views: {
+      'tab-calendar': {
+        templateUrl: 'templates/ongoing-detail.html',
+        controller: 'CalendarCtrl'
+      }
+    }
+  })
 
   .state('tab.account', {
     url: '/account',

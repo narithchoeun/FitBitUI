@@ -120,7 +120,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('CalendarCtrl', function($scope, $ionicPopup) {
+.controller('CalendarCtrl', function($scope, $ionicPopup, $state) {
   $scope.query = "";
   $scope.friends = [
     {
@@ -137,12 +137,26 @@ angular.module('starter.controllers', [])
     }
   ];
 
-  $scope.groupGoal = function() {
-
-  }
+  $scope.onGoing = [
+    {
+      "goal": "Burn 200 Calories",
+      "friends": [
+        {
+          "name": "Alex"
+        },
+        {
+          "name": "Bella"
+        }
+      ]
+    }
+  ];
 
   $scope.invite = function(){
 
+  }
+
+  $scope.onGoingClicked = function(){
+    $state.go('tab.ongoing');
   }
 
   $scope.showInviteConfirm = function(text) {

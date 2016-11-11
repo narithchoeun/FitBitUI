@@ -1,6 +1,9 @@
 <ion-view view-title="Calendar" ng-controller="CalendarCtrl">
+  <ion-nav-buttons side="primary">
+    <button class="button" ng-click="onGoingClicked()">Ongoing</button>
+  </ion-nav-buttons>
+
   <ion-content>
-    <ion-list>
       <!-- search bar -->
       <ion-item class="item-input-inset">
         <label class="item-input-wrapper">
@@ -9,11 +12,13 @@
         <button class="button button-small button-positive item-icon-left"><i class="ion-search"></i> Search</button>
       </ion-item>
 
-      <!-- friend items -->
-      <ion-item class="item" ng-repeat="friend in friends | filter:query">
-        {{friend.name}}
-        <button class="button button-medium button-clear button-positive pull-right" ng-click="showInviteConfirm(friend.name)"><i class="icon ion-plus-circled"></i></button>
-      </ion-item>
-    </ion-list>
+      <ion-list>
+        <!-- friend items -->
+        <ion-item class="item" ng-repeat="friend in friends | filter: query">
+          {{friend.name}}
+          <button class="button button-medium button-clear button-positive pull-right" ng-click="showInviteConfirm(friend.name)"><i class="icon ion-plus-circled"></i></button>
+        </ion-item>
+
+      </ion-list>
   </ion-content>
 </ion-view>
