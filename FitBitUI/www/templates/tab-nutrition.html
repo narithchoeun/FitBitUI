@@ -25,7 +25,8 @@
                     ng-click="toggleGroup(group)"
                     ng-class="{active: isGroupShown(group)}">
               <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
-            Calorie Intake<br>987/1700
+            <h2 class="title">Calorie Intake<i class="icon ion-fork"></i> <br>987/1700</h2>
+			
 			<ion-item class="item-accordion"
                     ng-repeat="item in group.items"
                     ng-show="isGroupShown(group)">
@@ -52,7 +53,8 @@
                     ng-click="toggleGroup(group)"
                     ng-class="{active: isGroupShown(group)}">
               <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
-            Micros<br>987/1700
+            <h2 class="title">Micros<i class="icon ion-fork"></i><br>987/1700 </h2>
+			
 			<ion-item class="item-accordion"
                     ng-repeat="item in group.items"
                     ng-show="isGroupShown(group)">
@@ -98,12 +100,14 @@
                     ng-click="toggleGroup(group)"
                     ng-class="{active: isGroupShown(group)}">
               <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
-            Water<br>987/1700
+            <h2 class="title">Water<i class="icon ion-fork"></i><br>987/1700</h2>
+			
 			 <i class="icon ion-ios-water"></i>
 			<ion-item class="item-accordion"
                     ng-repeat="item in group.items"
                     ng-show="isGroupShown(group)">
-             Protein<br>25%
+             Glasses of water: 12 glass<br>
+			 Fluid oz: 9
           </ion-item>
           </ion-item>
         </div>
