@@ -12,9 +12,8 @@
     <ion-list>
       <!-- item divider bar -->
       <ion-item class="item-divider text-center" id="account-divider">
-        <i class="button button-small pull-left" ng-click="goal.showDelete = !goal.showDelete; goal.showReorder = false">Edit</i>
+        <i class="button button-small pull-left" ng-click="goal.showDelete = !goal.showDelete; goal.showReorder = !goal.showReorder">Edit</i>
         My Goals
-        <i class="button button-small icon ion-navicon pull-right" ng-click="goal.showReorder = ! goal.showReorder; goal.showDelete = false"></i>
       </ion-item>
 
       <!-- add a goal to the list -->
@@ -35,7 +34,7 @@
           </label>
         </div>
         {{goal.text}}
-        <ion-option-button class="button-assertive icon ion-trash-a" ng-click="goals.splice($index, 1)"></ion-option-button>
+        <!-- <ion-option-button class="button-assertive icon ion-trash-a" ng-click="goals.splice($index, 1)"></ion-option-button> -->
         <ion-delete-button class="ion-minus-circled" ng-click="goals.splice($index, 1)"></ion-delete-button>
         <ion-reorder-button class="ion-navicon" on-reorder="moveGoal(goal, $fromIndex, $toIndex)"></ion-reorder-button>
       </ion-item>
