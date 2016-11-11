@@ -143,15 +143,18 @@ angular.module('starter.controllers', [])
 
 /*Test Graph*/
 $scope.graph = {};
-  $scope.graph.data = [
+  $scope.labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  $scope.series = ['Current', 'Goal'];
+    $scope.data = [
     //Current
     [23.7, 23.2, 23.5, 22.9, 29.7, 29.2, 28.8],
     //Goal
     [15, 15, 15, 15, 15, 15, 15]
   ];
-  //hopefully will cross reference both idk tho
-  $scope.graph.labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-  $scope.graph.series = ['Current', 'Goal'];
+  $scope.onClick = function (points, evt) {
+    console.log(points, evt);
+  };
+  
 
 })
 
@@ -197,6 +200,7 @@ $scope.graph = {};
     });
   };
 
+  
 })
 
 .controller('AccountCtrl', function($scope, $ionicPopup) {

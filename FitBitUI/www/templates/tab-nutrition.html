@@ -106,7 +106,10 @@
 	  <!-- GRAPH TEST -->
 	  
 	  <h3>BMI Graph</h3>
-    <canvas id="bar" class="chart chart-line" data="graph.data" labels="graph.labels" series='graph.series' height="30"></canvas>
+    <div class="graph">
+		<canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options"
+		chart-dataset-override="datasetOverride" chart-click="onClick" options="{showToolTips:false}"> </canvas> 
+	</div>
 	  
   </ion-content>
 </ion-view>
