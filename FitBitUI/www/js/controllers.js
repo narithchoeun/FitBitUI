@@ -43,74 +43,82 @@ angular.module('starter.controllers', [])
 .controller('HealthCtrl', function($scope) {})
 
 .controller('NutritionCtrl', function($scope) {
-  /**
-  	console.log('hi@');
-  	angular.element('accordion'); //get elements by class name
-  	angular.element('accordion-item'); //get elements by class name
-
-  	  $scope.toggleGroup = function(accordion) {
-      accordion.show = !accordion.show;
-    };
-    $scope.isGroupShown = function(accordion) {
-      return accordion.show;
-    };
-    */
-
-
-	  $scope.toggleGroup = function(accordion) {
-      accordion.show = !accordion.show;
-    };
-    $scope.isGroupShown = function(accordion) {
-      return accordion.show;
-    };
-
 
     $scope.groups = [];
-  	for (var i=0; i<1; i++) {
-      $scope.groups[i] = {
+  	for (var i=0; i<1; i++) 
+	{
+      $scope.groups[i] = 
+	  {
         name: i,
         items: [],
         show: false
-      }
-
-
-    for (var j=0; j<1; j++) {
+    };
+	  
+    for (var j=0; j<1; j++) 
+		{
       $scope.groups[i].items.push(i + j);
-      $scope.groups = [];
-    }
-    	for (var i=0; i<1; i++) {
-        $scope.groups[i] = {
-          name: i,
+		}
+	};
+	
+	$scope.groups2 = [];
+    for (var a=0; a<1; a++) 
+	{
+        $scope.groups2[a] = 
+		{
+          name: a,
           items: [],
           show: false
         };
+    for (var b=0; b<1; b++) 
+		{
+          $scope.groups2[a].items.push(a + '-' + b);
+		}
+    };
+	
+	$scope.groups3 = [];
+    for (var c=0; c<1; c++) 
+	{
+        $scope.groups3[c] = 
+		{
+          name: c,
+          items: [],
+          show: false
+        };
+    for (var d=0; d<1; d++) 
+		{
+          $scope.groups3[c].items.push(c + '-' + d);
+		}
+    };
+	
+	
 
-        for (var j=0; j<1; j++) {
-          $scope.groups[i].items.push(i + '-' + j);
-        }
-      }
-    }
+ 
     // angular.element('group');
     /*
      * if given group is the selected group, deselect it
      * else, select the given group
      */
-    $scope.toggleGroup = function(group) {
+    $scope.toggleGroup = function(group) 
+	{
       group.show = !group.show;
     };
-    $scope.isGroupShown = function(group) {
+    $scope.isGroupShown = function(group) 
+	{
       return group.show;
     };
 
 
-
-     $scope.doRefresh = function() {
+	$scope.day =['Day 1'];
+     $scope.doRefresh = function() 
+	 {
 
       console.log('Refreshing!');
-      $timeout( function() {
+      $timeout( function() 
+	  {
+		var x=0
         //simulate async response
-        $scope.accordion.push('New Accordion Item ' + Math.floor(Math.random() * 1000) + 4);
-
+        $scope.accordion.push('Day' + x);
+		x++;
         //Stop the ion-refresher from spinning
         $scope.$broadcast('scroll.refreshComplete');
 

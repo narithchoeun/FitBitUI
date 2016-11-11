@@ -16,7 +16,8 @@
       </ion-item>
     </ion-list>
 -->
-Monday
+<ion-list><!--main list-->
+<h3 ng-repeat="Day in Days">{{Day}}</h3>
       <ion-list>
         <div ng-repeat="group in groups">
 		
@@ -43,11 +44,9 @@ Monday
           </ion-item>
         </div>
       </ion-list>
-	  
-	  
-	  
+
 	  <ion-list>
-        <div ng-repeat="group in groups">
+        <div ng-repeat="group in groups2">
 		
           <ion-item class="item-stable"
                     ng-click="toggleGroup(group)"
@@ -69,9 +68,47 @@ Monday
                     ng-show="isGroupShown(group)">
              Zinc<br>20g
           </ion-item>
+		  <ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+             Iron<br>20g
+          </ion-item>
+		  <ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+             Uranium<br>20g
+          </ion-item>
+		  <ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+             Vitamin D<br>20g
+          </ion-item>
+		  <ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+             Vitamin C<br>20g
+          </ion-item>
           </ion-item>
         </div>
       </ion-list>
+	  <ion-list>
+        <div ng-repeat="group in groups3">
+		
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}">
+              <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+            Water<br>987/1700
+			 <i class="icon ion-ios-water"></i>
+			<ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+             Protein<br>25%
+          </ion-item>
+          </ion-item>
+        </div>
+      </ion-list>
+</ion-list><!--end main list -->	  
 	  
   </ion-content>
 </ion-view>
