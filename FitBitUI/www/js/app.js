@@ -138,12 +138,12 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.calendar', {
-    url: '/calendar',
+  .state('tab.group', {
+    url: '/group',
     views: {
-      'tab-calendar': {
-        templateUrl: 'templates/tab-calendar.html',
-        controller: 'CalendarCtrl'
+      'tab-group': {
+        templateUrl: 'templates/tab-group.html',
+        controller: 'GroupCtrl'
       }
     }
   })

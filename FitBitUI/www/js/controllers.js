@@ -218,8 +218,11 @@ $scope.showAddConfirm = function(text) {
 
 })
 
-.controller('CalendarCtrl', function($scope, $ionicPopup) {
-  $scope.query = "";
+.controller('GroupCtrl', function($scope, $ionicPopup) {
+  $scope.query = {};
+  $scope.index = {};
+
+
   $scope.friends = [
     {
       "name": "Alex",
@@ -235,13 +238,49 @@ $scope.showAddConfirm = function(text) {
     }
   ];
 
-  $scope.groupGoal = function() {
 
-  }
+  $scope.onGoing = [
+    {
+      "goal": "Burn 200 Calories",
+      "friends": [
+        {
+          "name": "Alex"
+        },
+        {
+          "name": "Bella"
+        }
+      ]
+    },
+    {
+      "goal": "Walk 1000 Steps",
+      "friends": [
+        {
+          "name": "Alex"
+        }
+      ]
+    }
 
-  $scope.invite = function(){
 
-  }
+  ];
+
+  $scope.showInviteConfirm = function(text) {
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Invite a Friend',
+      template: 'Are you sure you want to invite ' + text + '?'
+    });
+
+
+    confirmPopup.then(function(res) {
+      if(res) {
+        console.log('ok adding');
+        // $scope.invite(text);
+        console.log(text);
+      } else {
+        console.log('cancel');
+      }
+    });
+  };
+
 })
 
 .controller('AccountCtrl', function($scope, $ionicPopup) {
